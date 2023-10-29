@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Stoica_Ramona_Lab2.Data;
 
@@ -11,9 +12,10 @@ using Stoica_Ramona_Lab2.Data;
 namespace Stoica_Ramona_Lab2.Migrations
 {
     [DbContext(typeof(Stoica_Ramona_Lab2Context))]
-    partial class Stoica_Ramona_Lab2ContextModelSnapshot : ModelSnapshot
+    [Migration("20231029181427_modificarenew2")]
+    partial class modificarenew2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
