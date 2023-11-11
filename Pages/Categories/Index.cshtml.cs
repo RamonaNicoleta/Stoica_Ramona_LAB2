@@ -33,6 +33,7 @@ namespace Stoica_Ramona_Lab2.Pages.Categories
             CategoryData.Categories = await _context.Category
                 .Include(i => i.BookCategories)
                 .ThenInclude(i => i.Book)
+                .ThenInclude(i => i.Author)
                 .OrderBy(i => i.CategoryName)
                 .ToListAsync();
 
