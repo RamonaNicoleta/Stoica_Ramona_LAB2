@@ -9,7 +9,7 @@ namespace Stoica_Ramona_Lab2.Data
 {
     public class Stoica_Ramona_Lab2Context : DbContext
     {
-        public Stoica_Ramona_Lab2Context (DbContextOptions<Stoica_Ramona_Lab2Context> options)
+        public Stoica_Ramona_Lab2Context(DbContextOptions<Stoica_Ramona_Lab2Context> options)
             : base(options)
         {
         }
@@ -22,7 +22,17 @@ namespace Stoica_Ramona_Lab2.Data
 
         public DbSet<Stoica_Ramona_Lab2.Models.Category>? Category { get; set; }
 
-     
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Book>()
+                .HasOne(b => b.Borrowing)
+                .WithOne(b => b.Book)
+                .HasForeignKey<Borrowing>(b => b.BookID);
 
+        }
+
+        public DbSet<Stoica_Ramona_Lab2.Models.Member>? Member { get; set; }
+
+        public DbSet<Stoica_Ramona_Lab2.Models.Borrowing>? Borrowing { get; set; }
     }
 }

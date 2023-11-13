@@ -9,9 +9,13 @@
   <ItemGroup>
     <Compile Remove="Migrations\20231026112502_InitialCreate.cs" />
     <Compile Remove="Migrations\20231026112502_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\LibraryIdentity\20231113082709_CreateIdentity.cs" />
+    <Compile Remove="Migrations\LibraryIdentity\20231113082709_CreateIdentity.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.23" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.23">
